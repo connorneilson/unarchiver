@@ -39,6 +39,8 @@ window.geometry("400x200")
 style = ttk.Style()
 style.configure("TButton", padding=6)
 style.configure("TLabel", padding=6)
+style.configure("Horizontal.TProgressbar", troughcolor="#E0E0E0", background="#FF0000", bordercolor="#616161",
+                lightcolor="#BDBDBD", darkcolor="#757575")
 
 # Create a frame for the content
 content_frame = ttk.Frame(window, padding=10)
@@ -49,7 +51,8 @@ select_button = ttk.Button(content_frame, text="Select Archive", command=unzip_f
 select_button.pack(pady=10)
 
 # Create a progress bar
-progress_bar = ttk.Progressbar(content_frame, orient=tk.HORIZONTAL, length=200, mode='determinate')
+progress_bar = ttk.Progressbar(content_frame, orient=tk.HORIZONTAL, length=200, mode='determinate',
+                               style="Horizontal.TProgressbar")
 progress_bar.pack()
 
 # Create a label for displaying the status
